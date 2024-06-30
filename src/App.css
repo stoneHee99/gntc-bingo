@@ -20,6 +20,7 @@ body {
   padding-top: 70%;
   position: relative;
   border: 1px solid #ccc;
+  border-radius: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
