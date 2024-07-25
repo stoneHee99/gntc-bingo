@@ -6,8 +6,10 @@ const QuizModal = ({ quiz, onSubmit, onRequestClose }) => {
   const [answer, setAnswer] = useState('');
   const [isIncorrect, setIsIncorrect] = useState(false);
 
+  const normalize = (str) => str.replace(/\s+/g, '').toLowerCase();
+
   const handleSubmit = () => {
-    if (answer === quiz.answer) {
+    if (normalize(answer) === normalize(quiz.answer)) {
       onSubmit(true);
     } else {
       setIsIncorrect(true);
@@ -17,6 +19,7 @@ const QuizModal = ({ quiz, onSubmit, onRequestClose }) => {
   return (
       <Modal isOpen={true} onRequestClose={onRequestClose} className="Modal" overlayClassName="Overlay" closeTimeoutMS={300} contentLabel="Quiz Modal">
         <button className="close-button" onClick={onRequestClose}>X</button>
+        {quiz.image && <img src={quiz.image} alt="quiz" className="quiz-image" />}
         <h2>{quiz.question}</h2>
         <input
             type="text"

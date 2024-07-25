@@ -11,6 +11,17 @@ import './App.css'
 import bingoTitle from './assets/bingo-title.png';
 import Modal from "react-modal";
 
+import question1 from './assets/question1.png';
+import question2 from './assets/question2.jpg';
+import question6 from './assets/question6.jpg';
+import question7 from './assets/question7.png';
+import question8 from './assets/question8.jpg';
+import question11 from './assets/question11.jpg';
+import question12 from './assets/question12.jpg';
+import question13 from './assets/question13.png';
+import question14 from './assets/question14.jpg';
+import question15 from './assets/question15.jpg';
+
 const App = () => {
   return (
       <Router>
@@ -36,28 +47,28 @@ const BingoGame = () => {
   const [showFinalModal, setShowFinalModal] = useState(false);
 
   const quizs = [
-    { question: '1+1?', answer: '2'},
-    { question: '2+2?', answer: '4'},
-    { question: '3+3?', answer: '6'},
-    { question: '4+4?', answer: '8'},
-    { question: '5+5?', answer: '10'},
-    { question: '6+6?', answer: '12'},
-    { question: '7+7?', answer: '14'},
-    { question: '8+8?', answer: '16'},
-    { question: '9+9?', answer: '18'},
-    { question: '10+10?', answer: '20'},
-    { question: '11+11?', answer: '22'},
-    { question: '12+12?', answer: '24'},
-    { question: '13+13?', answer: '26'},
-    { question: '14+14?', answer: '28'},
-    { question: '15+15?', answer: '30'},
-    { question: '16+16?', answer: '32'},
+    { question: '사진을 참고하세요', answer: '사도 바울', image: question1},
+    { question: '사진을 참고하세요', answer: '경주성전', image: question2},
+    { question: '수양관 옆 테이블 지도', answer: '에벤에셀'},
+    { question: '경기도 화성시 봉담읍 세곡리 산34-1', answer: 'Grace and Truth Church'},
+    { question: 'ㅈㄱㅈ', answer: '마라나타'},
+    { question: '사진을 참고하세요', answer: '말라기', image: question6},
+    { question: '사진을 참고하세요', answer: '주 안에서 자랑하라', image: question7},
+    { question: '사진을 참고하세요', answer: '오 이 기쁨', image: question8},
+    { question: '선교관 지도', answer: '여호와 삼마'},
+    { question: '나는 너희에게 물로 세례를 주었거니와 그는 성령으로 너희에게 세례를 주시리라 (막1:8)', answer: '엘리야'},
+    { question: '사진을 참고하세요', answer: '오르난', image: question11},
+    { question: '사진을 참고하세요', answer: '은혜 충만, 진리 충만', image: question12},
+    { question: '사진을 참고하세요', answer: '경서하', image: question13},
+    { question: '사진을 참고하세요', answer: '요엘', image: question14},
+    { question: '사진을 참고하세요', answer: '만세반석', image: question15},
+    { question: '수양관 만나실 뒤편 지도', answer: '빛의 사자들이여'},
   ];
 
   const finalMessages = {
-    antioch: "축하합니다! 안디옥 게임에서 3빙고를 달성했습니다!",
-    jerusalem: "축하합니다! 예루살렘 게임에서 3빙고를 달성했습니다!",
-    bethlehem: "축하합니다! 베들레헴 게임에서 3빙고를 달성했습니다!",
+    antioch: "너희로 지극히 선한 것을 분별하며 또 진실하여 허물 없이 그리스도의 날까지 이르고 예수 그리스도로 말미암아 의의 열매가 가득하여 하나님의 영광과 찬송이 되게 하시기를 구하노라 (빌1:10-11, 개역한글)",
+    jerusalem: "네가 진리의 말씀을 옳게 분변하며 부끄러울 것이 없는 일군으로 인정된 자로 자신을 하나님 앞에 드리기를 힘쓰라 (딤후2:15, 개역한글)",
+    bethlehem: "근신하라 깨어라 너희 대적 마귀가 우는 사자 같이 두루 다니며 삼킬 자를 찾나니 너희는 믿음을 굳게 하여 저를 대적하라 이는 세상에 있는 너희 형제들도 동일한 고난을 당하는 줄을 앎이니라 (벧전5:8-9, 개역한글)",
   };
 
   const handleCellClick = (index) => {

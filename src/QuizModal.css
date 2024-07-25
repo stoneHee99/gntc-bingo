@@ -84,3 +84,9 @@ button {
   color: red;
   margin-top: 10px;
 }
+
+.quiz-image {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
