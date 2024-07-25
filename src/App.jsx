@@ -1,11 +1,35 @@
 import {useEffect, useState} from 'react'
+import {
+  BrowserRouter as Router, Link, Navigate,
+  Route,
+  Routes,
+  useParams
+} from "react-router-dom";
 import BingoBoard from './BingoBoard.jsx';
 import QuizModal from './QuizModal.jsx';
 import './App.css'
 import bingoTitle from './assets/bingo-title.png';
 import Modal from "react-modal";
 
-function App() {
+const App = () => {
+  return (
+      <Router>
+        <Routes>
+          <Route path="/:id" element={<BingoGame/>}/>
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Router>
+  );
+};
+
+const BingoGame = () => {
+  const { id } = useParams();
+  const validIds = ['antioch', 'jerusalem', 'bethlehem'];
+
+  if (!validIds.includes(id)) {
+    return <Navigate to="/error" />;
+  }
+
   const [selectedCell, setSelectedCell] = useState(null);
   const [bingoCount, setBingoCount] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState([]);
@@ -29,6 +53,12 @@ function App() {
     { question: '15+15?', answer: '30'},
     { question: '16+16?', answer: '32'},
   ];
+
+  const finalMessages = {
+    antioch: "축하합니다! 안디옥 게임에서 3빙고를 달성했습니다!",
+    jerusalem: "축하합니다! 예루살렘 게임에서 3빙고를 달성했습니다!",
+    bethlehem: "축하합니다! 베들레헴 게임에서 3빙고를 달성했습니다!",
+  };
 
   const handleCellClick = (index) => {
     setSelectedCell(index);
@@ -99,11 +129,19 @@ function App() {
             overlayClassName="final-overlay"
         >
           <h2>축하합니다! 3빙고를 달성했습니다!</h2>
-          <p>성경 말씀: 내가 너희에게 새 계명을 주노니 서로 사랑하라 내가 너희를 사랑한 것 같이 너희도 서로 사랑하라 (요한복음 13:34)</p>
+          <p>{finalMessages[id]}</p>
           <button onClick={closeModal}>닫기</button>
         </Modal>
       </div>
   );
-}
+};
+
+const ErrorPage = () => (
+    <div className="App">
+      <h2>Error 404</h2>
+      <p>Page not found</p>
+      <Link to="/">Go back to home</Link>
+    </div>
+);
 
 export default App;
