@@ -106,7 +106,7 @@ const BingoGame = () => {
       }
       setBingoCount(count);
       if (
-          count >= 3) {
+          count >= 2) {
         setShowFinalModal(true);
       }
     };
