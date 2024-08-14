@@ -121,7 +121,7 @@ const BingoGame = () => {
   return (
       <div className="App">
         <div className="title">
-          <img src={bingoTitle} />
+          <img src={bingoTitle} style={{width: '300px'}}/>
         </div>
         <div>
         <BingoBoard onCellClick={handleCellClick} correctAnswers={correctAnswers} />
