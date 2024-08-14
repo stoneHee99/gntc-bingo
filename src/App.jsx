@@ -11,16 +11,19 @@ import './App.css'
 import bingoTitle from './assets/bingo-title.png';
 import Modal from "react-modal";
 
-import question1 from './assets/question1.png';
-import question2 from './assets/question2.jpg';
-import question6 from './assets/question6.jpg';
+import question1 from './assets/1번.png';
+import question2 from './assets/2번.jpg';
+import question3 from './assets/3번.jpg';
+import question6 from './assets/6번.jpg';
 import question7 from './assets/question7.png';
-import question8 from './assets/question8.jpg';
-import question11 from './assets/question11.jpg';
-import question12 from './assets/question12.jpg';
+import question8 from './assets/8번.jpg';
+import question9 from './assets/9번.jpg';
+import question11 from './assets/11번.jpg';
+import question12 from './assets/12번.jpg';
 import question13 from './assets/question13.png';
-import question14 from './assets/question14.jpg';
-import question15 from './assets/question15.jpg';
+import question14 from './assets/14번.jpg';
+import question15 from './assets/15번.jpg';
+import question16 from './assets/16번.jpg';
 
 const App = () => {
   return (
@@ -47,22 +50,22 @@ const BingoGame = () => {
   const [showFinalModal, setShowFinalModal] = useState(false);
 
   const quizs = [
-    { question: '사진을 참고하세요', answer: '사도 바울', image: question1},
-    { question: '사진을 참고하세요', answer: '경주성전', image: question2},
-    { question: '수양관 옆 테이블 지도', answer: '에벤에셀'},
+    { question: '', answer: '사도 바울', image: question1},
+    { question: '', answer: '경주성전', image: question2},
+    { question: '', answer: '에벤에셀', image: question3},
     { question: '경기도 화성시 봉담읍 세곡리 산34-1', answer: 'Grace and Truth Church'},
     { question: 'ㅈㄱㅈ', answer: '마라나타'},
-    { question: '사진을 참고하세요', answer: '말라기', image: question6},
-    { question: '사진을 참고하세요', answer: '주 안에서 자랑하라', image: question7},
-    { question: '사진을 참고하세요', answer: '오 이 기쁨', image: question8},
-    { question: '선교관 지도', answer: '여호와 삼마'},
+    { question: '', answer: '말라기', image: question6},
+    { question: '', answer: '주 안에서 자랑하라', image: question7},
+    { question: '', answer: '오 이 기쁨', image: question8},
+    { question: '', answer: '여호와 삼마', image: question9},
     { question: '나는 너희에게 물로 세례를 주었거니와 그는 성령으로 너희에게 세례를 주시리라 (막1:8)', answer: '엘리야'},
-    { question: '사진을 참고하세요', answer: '오르난', image: question11},
-    { question: '사진을 참고하세요', answer: '은혜 충만, 진리 충만', image: question12},
-    { question: '사진을 참고하세요', answer: '경서하', image: question13},
-    { question: '사진을 참고하세요', answer: '요엘', image: question14},
-    { question: '사진을 참고하세요', answer: '만세반석', image: question15},
-    { question: '수양관 만나실 뒤편 지도', answer: '빛의 사자들이여'},
+    { question: '', answer: '오르난', image: question11},
+    { question: '', answer: '은혜 충만, 진리 충만', image: question12},
+    { question: '', answer: '경서하', image: question13},
+    { question: '', answer: '요엘', image: question14},
+    { question: '', answer: '만세반석', image: question15},
+    { question: '', answer: '빛의 사자들이여', image: question16},
   ];
 
   const finalMessages = {
