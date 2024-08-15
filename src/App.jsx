@@ -142,7 +142,7 @@ const BingoGame = () => {
             className="final-modal"
             overlayClassName="final-overlay"
         >
-          <h2>축하합니다! 3빙고를 달성했습니다!</h2>
+          <h2>축하합니다! 2빙고를 달성했습니다!</h2>
           <p>{finalMessages[id]}</p>
           <button onClick={closeModal}>닫기</button>
         </Modal>

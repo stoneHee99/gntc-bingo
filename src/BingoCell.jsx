@@ -9,7 +9,10 @@ const BingoCell = ({ index, onClick, isCorrect, backgroundImage }) => {
           onClick={() => onClick(index)}
           style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        {index + 1}
+        <div className="cell-content">
+          {index + 1}
+        </div>
+        {isCorrect && <div className="cell-overlay">✔️</div>}
       </div>
   );
 };
